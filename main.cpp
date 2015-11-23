@@ -177,7 +177,7 @@ void testSumOfGLSLSampleIDs(unsigned int numSamples, bool useGLDebugOutput) {
     correctSumOfSampleIDs += i;
   }
   std::cout << "sum of gl_SampleIDs: " << atomicCounter[0] << " | "
-            << correctSumOfSampleIDs << " correct is correct" << std::endl;
+            << correctSumOfSampleIDs << " is correct" << std::endl;
 
   // close GL context and any other GLFW resources
   glfwTerminate();
