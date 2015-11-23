@@ -30,7 +30,7 @@ void GLAPIENTRY DebugCallback(GLenum source, GLenum type, GLuint id,
   printf("0x%X: %s\n", id, message);
 }
 
-GLFWwindow* setupOpenGLContextWindow(uint numSamples, bool useGLDebugOutput) {
+GLFWwindow* setupOpenGLContextWindow(unsigned int numSamples, bool useGLDebugOutput) {
   // start GL context and O/S window using the GLFW helper library
   if (!glfwInit()) {
     throw std::runtime_error("ERROR: could not start GLFW3\n");

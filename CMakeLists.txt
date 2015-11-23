@@ -46,3 +46,5 @@ target_link_libraries(
     ${GLEW_LIBRARIES}
     ${GLFW_STATIC_LIBRARIES})
 
+set_property(TARGET glSampleIDRepro PROPERTY CXX_STANDARD 11)
+set_property(TARGET glSampleIDRepro PROPERTY CXX_STANDARD_REQUIRED ON)
