@@ -143,9 +143,21 @@ GLuint* setupBuffers(GLuint& vao, GLuint& atomicBuffer) {
   return mappedBuffer;
 }
 
+GLint get(GLenum name) {
+  GLint value = -1;
+  glGetIntegerv(name, &value);
+  return value;
+}
+
 void testSumOfGLSLSampleIDs(unsigned int numSamples, bool useGLDebugOutput) {
   GLFWwindow* window = setupOpenGLContextWindow(numSamples, useGLDebugOutput);
   printOpenGLError();
+
+#define GLGET(NAME)  std::cout << #NAME ": " << get(NAME) << "\n"
+
+  GLGET(GL_MAX_COLOR_TEXTURE_SAMPLES);
+  GLGET(GL_MAX_DEPTH_TEXTURE_SAMPLES);
+  GLGET(GL_MAX_FRAMEBUFFER_SAMPLES);
 
   GLuint vaoID, atomicCounterID;
   auto atomicCounter = setupBuffers(vaoID, atomicCounterID);
