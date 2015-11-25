@@ -182,7 +182,7 @@ void testSumOfGLSLSampleIDs(unsigned int numSamples, bool useGLDebugOutput) {
   glfwPollEvents();
   // put the stuff we've been drawing onto the display
   glfwSwapBuffers(window);
-
+  glMemoryBarrier(GL_ALL_BARRIER_BITS);
   glFinish();
   unsigned int correctSumOfSampleIDs = 0;
   for (unsigned int i = 0; i < numSamples; ++i) {
